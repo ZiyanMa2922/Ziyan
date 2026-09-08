@@ -9,6 +9,23 @@ Markdown Cheatsheet (from [https://www.markdownguide.org/cheat-sheet/](https://w
 
 ## Week 1 notes
 
+1. Long time ago, code might have been similar to the ciphers or password, 
+but in my opinion, the code now is more like a way that people use it to transmit 
+information. This approach uses concise and strict language/symbo to express
+information, thereby ensuring the accuracy of information trasmission.
+Code has different forms and formats; each form must follow specific rules. Every 
+forms and formats has its own characteristics, Whether it's a strength or a weakness.
+We can use the thinking methods, logic, and instructions of coding to achieve various 
+effects we desire, whether in visual, interaction or physical space.
+
+2. I believe code will working for me, because with the help of code, it can reduce the 
+errors from hand-drawing or manual adjustments when drawing fine images or creating animations.
+More over, through code, different visual effects can be achieved, also sometimes the result can 
+give me some new ideas.
+
+3. For this semester, I hope to become more familiar with the mastery of programinming applications,
+understand the underlying logic of coding as well as its practical implementarion methods, and explore
+some interesting visual effects.
 ---
 
 # Heading1
