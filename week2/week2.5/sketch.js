@@ -48,8 +48,6 @@ function draw(){
 
 }
 
-
-
 function mousePressed() {
     stage = stage + 1;
     if (stage > 3) {
