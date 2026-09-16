@@ -1,5 +1,9 @@
 # week2
 
+2. week2.2 version
+
+For the second version, I wanted to try using mouse clicks and rotation. I wanted the diamond-shaped squares to appear at the location where I clicked, with random colors.At first, I couldn’t figure out why clicking the mouse wasn’t doing anything. After looking through my code for a while, I realized that I had forgotten the parentheses after the mousePressed function. It made me pay more attention to the details of how the functions are written.
+
 ## Getting Started
 
 Open `index.html` in your web browser and start editing `sketch.js`.

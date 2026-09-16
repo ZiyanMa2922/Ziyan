@@ -1,5 +1,9 @@
 # week2
 
+4. week2.4 version
+
+For the fourth version, I wanted to create an effect that looks like small fireworks or glitter. I tried making squares appear when I clicked the mouse, with a random rotation angle and a random size each time.
+
 ## Getting Started
 
 Open `index.html` in your web browser and start editing `sketch.js`.
