@@ -1,5 +1,9 @@
 # week2
 
+1. week2.1 version
+
+For the first version, I followed the recorded lecture and tried out some of the shape-related code tools we learned about in class. This helped me get more familiar with the basic process.I noticed that it was sometimes hard to control exactly where the shapes appeared, and they often ended up in slightly different places than I expected. I also didn’t have a very clear idea of how large a pixel is, so I wasn’t sure what a shape would actually look like when I entered a value like 100.
+
 ## Getting Started
 
 Open `index.html` in your web browser and start editing `sketch.js`.
