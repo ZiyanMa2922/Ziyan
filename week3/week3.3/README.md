@@ -1,6 +1,5 @@
 # week3
-
-
+In the third version, I added if functions to use the mouse position to control the changes in the shapes. When the mouse is on the left side of width / 2, the colors are inverted. When the mouse is above height / 2, it draws the 1, 3, 5, 7... squares, while when it is below, it draws the 2, 4, 6, 8... squares.
 
 ## Getting Started
 
