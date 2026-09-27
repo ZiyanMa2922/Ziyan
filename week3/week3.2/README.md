@@ -1,5 +1,5 @@
-# week3
-
+# week3.2
+In the second version, I tried to use the cos and sin functions to change the color, rotation direction, and speed of the squares, making the squares show different rotation speeds and changes.
 ## Getting Started
 
 Open `index.html` in your web browser and start editing `sketch.js`.

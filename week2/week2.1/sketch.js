@@ -4,8 +4,9 @@ let yPos
 function setup() {
     createCanvas(windowWidth, windowHeight);
     background(220, 240, 255);
-    xPos = width/2
-    yPos = width/2
+
+    xPos = width / 2;
+    yPos = height / 2;
 }
 
 function draw() {
