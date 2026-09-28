@@ -1,5 +1,4 @@
-// press 'r' for new random seed
-// press 's' to save
+
 
 let seed = 1299;
 let doExport = false;
