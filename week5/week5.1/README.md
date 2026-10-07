@@ -1,4 +1,5 @@
-# week5
+# week5.1
+I modified the repeated arcs from the previous class, making each unit rotate around its center point. At first, I used 360 degrees for the rotation, but I forgot that the shape is symmetrical, so the plotter ended up drawing the same paths twice. Later, based on the repeated arc pattern, I added random vertical parallel lines to make the overall pattern more visually interesting
 
 ## Getting Started
 
