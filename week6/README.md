@@ -1,5 +1,7 @@
 # week6
+In this week's assignment, I used an array to create a collection of stars with different sizes and transparency levels. Each time I click the mouse, pop() removes one star from the array. As the number of stars gradually decreases, I wanted to create the feeling that the sky is slowly getting brighter.
 
+When the last star disappears, the background changes from black to sky blue, just like the sky at dawn. I also used many small, transparent circles to form the shapes of clouds, allowing them to slowly float across the daytime sky.
 ## Getting Started
 
 Open `index.html` in your web browser and start editing `sketch.js`.
