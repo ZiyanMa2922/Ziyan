@@ -17,6 +17,7 @@ function setup() {
       card.style(
         "transform",
         "translateY(-8px) scale(1.02)"
+        
       );
 
       card.style(
@@ -44,7 +45,7 @@ function setup() {
 
       card.style(
         "background-color",
-        "rgba(255, 255, 255, 0.65)"
+        "rgba(255, 255, 255, 0.24)"
       );
     });
   }
