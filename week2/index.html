@@ -1,23 +1,336 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Week 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Week 02 | Ziyan Ma</title>
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.11/p5.min.js"></script>
+  <script src="sketch.js" defer></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 50px;
+      min-height: 100vh;
+      box-sizing: border-box;
+      background-color: hsl(180, 25%, 78%);
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 52px;
+      margin: 0 0 10px;
+      color: #ad1414;
+    }
+
+    .intro {
+      color: #656464;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 45px;
+    }
+
+    /* Project gallery */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    /* Project card */
+    .project {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      background-color: rgba(255, 255, 255, 0.65);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(12px);
+
+      text-decoration: none;
+      color: #333;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+    }
+
+    /* Hover effect */
+    .project:hover {
+      transform: translateY(-8px) scale(1.02);
+
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+
+      background-color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* Project image */
+    .project img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Text area */
+    .project-content {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project h3 {
+      font-size: 24px;
+      color: #ad1414;
+      margin: 0 0 15px;
+    }
+
+    .description {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #656464;
+      margin: 0 0 25px;
+    }
+
+    .view {
+      font-size: 14px;
+      font-weight: 600;
+      color: #5c897a;
+      margin-top: auto;
+    }
+
+    /* Reflection section */
+    .reflection {
+      margin-top: 50px;
+      padding: 30px;
+
+      /* Light red transparent background */
+      background: rgba(255, 255, 255, 0.12);
+
+      border: 1px solid rgba(255, 255, 255, 0.6);
+
+      /* Rounded corners */
+      border-radius: 10px;
+
+      /* Gray text */
+      color: #656464;
+
+      line-height: 1.8;
+    }
+
+    .reflection h2 {
+      font-size: 26px;
+      color: #ad1414;
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    .reflection p {
+      font-size: 16px;
+      color: #656464;
+      margin-bottom: 15px;
+    }
+
+    .reflection p:last-child {
+      margin-bottom: 30;
+    }
+
+    /* Back link */
+    .back {
+      display: inline-block;
+      margin-top: 50px;
+
+      text-decoration: none;
+      color: #fefefe;
+
+      font-weight: 700;
+      font-size: 30px;
+
+      -webkit-text-stroke: 1px #f5fcff;
+    }
+
+    .back:hover {
+      color: #ad1414;
+      
+      text-decoration: underline;
+    }
+
+    /* Tablet */
+    @media (max-width: 900px) {
+      .projects {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      body {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 40px;
+        color: #fdfdfd;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .reflection {
+        padding: 22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <h1>Week 2</h1>
+  <h1>Week 02</h1>
+  <p class="intro">Drawing — Creative Coding Assignments</p>
 
-  <ul>
-    <li><a href="week2.1/">Week 2.1</a></li>
-    <li><a href="week2.2/">Week 2.2</a></li>
-    <li><a href="week2.3/">Week 2.3</a></li>
-    <li><a href="week2.4/">Week 2.4</a></li>
-    <li><a href="week2.5/">Week 2.5</a></li>
-  </ul>
+  <!-- Project gallery -->
+  <div class="projects">
 
-  <a href="../">← Back</a>
+    <!-- Week 2.1 -->
+    <a class="project" href="week2.1/">
+      <img src="assets/week2.1.png" alt="Week 2.1">
+
+      <div class="project-content">
+        <h3>Week 2.1</h3>
+        <p class="description">
+          An initial exploration of drawing different
+          geometric shapes using p5.js.
+        </p>
+        <p class="view">View Project →</p>
+      </div>
+    </a>
+
+    <!-- Week 2.2 -->
+    <a class="project" href="week2.2/">
+      <img src="assets/week2.2.png" alt="Week 2.2">
+
+      <div class="project-content">
+        <h3>Week 2.2</h3>
+        <p class="description">
+          I tried using mouse clicks and rotation to
+          make diamond-shaped squares appear where I
+          clicked, with random colors.
+        </p>
+        <p class="view">View Project →</p>
+      </div>
+    </a>
+
+    <!-- Week 2.3 -->
+    <a class="project" href="week2.3/">
+      <img src="assets/week2.3.png" alt="Week 2.3">
+
+      <div class="project-content">
+        <h3>Week 2.3</h3>
+        <p class="description">
+          Try creating a nice color gradient and
+          a dynamic rotation effect.
+        </p>
+        <p class="view">View Project →</p>
+      </div>
+    </a>
+
+    <!-- Week 2.4 -->
+    <a class="project" href="week2.4/">
+      <img src="assets/week2.4.png" alt="Week 2.4">
+
+      <div class="project-content">
+        <h3>Week 2.4</h3>
+        <p class="description">
+          I tried making squares appear when I clicked
+          the mouse, with a random rotation angle and
+          a random size each time. Make it looks like
+          small fireworks or glitter.
+        </p>
+        <p class="view">View Project →</p>
+      </div>
+    </a>
+
+    <!-- Week 2.5 -->
+    <a class="project" href="week2.5/">
+      <img src="assets/week2.5.png" alt="Week 2.5">
+
+      <div class="project-content">
+        <h3>Week 2.5</h3>
+        <p class="description">
+          I wanted to try having different shapes and
+          effects appear when I clicked anywhere on
+          the screen.
+        </p>
+        <p class="view">View Project →</p>
+      </div>
+    </a>
+
+  </div>
+  <!-- End of project gallery -->
+
+
+  <!-- Reflection section -->
+  <div class="reflection">
+
+    <h2>Process & Exploration</h2>
+
+    <p>
+     1. week2.1 version</p>
+     <p>
+
+For the first version, I followed the recorded lecture and tried out some of the shape-related code tools we learned about in class. This helped me get more familiar with the basic process.I noticed that it was sometimes hard to control exactly where the shapes appeared, and they often ended up in slightly different places than I expected. I also didn’t have a very clear idea of how large a pixel is, so I wasn’t sure what a shape would actually look like when I entered a value like 100.
+
+  </p>
+
+    <p>
+     2. week2.2 version
+</p>
+<p>
+For the second version, I wanted to try using mouse clicks and rotation. 
+I wanted the diamond-shaped squares to appear at the location where I clicked,
+ with random colors.At first, I couldn’t figure out why clicking the mouse wasn’
+ t doing anything. After looking through my code for a while, I realized that I
+  had forgotten the parentheses after the mousePressed function. It made me 
+  pay more attention to the details of how the functions are written.
+
+    </p>
+
+    <p>
+    3. week2.3 version</p>
+<p>
+For the third version, I wanted to try creating a nice color gradient and a dynamic rotation effect. I experimented with the position of the squares and the values in fill() to create a row of rotating squares that gradually changed from dark blue to light blue. At first, I didn’t add translate() between each push() and pop(), so I found that all the shapes were rotating around the same center point togeter. After adding different translate() values between each push() and pop(), I was able to fix the problem and make each square rotate around its own position.
+
+    </p>
+  
+<p>
+  4. week2.4 version</p>
+  <p>
+
+For the fourth version, I wanted to create an effect that looks like small fireworks or glitter. I tried making squares appear when I clicked the mouse, with a random rotation angle and a random size each time.
+  </p>
+
+  <p>
+5. week2.5 version</p>
+<p>
+For the fifth version, I wanted to try having different shapes and effects appear when I clicked anywhere on the screen, and repeat this process. I wanted the triangle in the screen to gradually become bigger after the first click, change into a circle after the second click, and show random colorful small dots after the third click. When the small dots appeared, I originally wanted them to slowly appear and slowly disappear, but now they look like they are flickering too quickly and are not very soft.
+  
+</p>
+
+</div>
+  <!-- Back to homepage --> 
+  <a class="back" href="../">← Back to Home</a>
 
 </body>
 </html>

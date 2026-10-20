@@ -1,23 +1,254 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Week 4</title>
+  <title>Week 4</title>
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.11/p5.min.js"></script>
+  <script src="sketch.js" defer></script>
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 60px 8%;
+      font-family: Arial, sans-serif;
+      background-color: hsl(180, 25%, 78%);
+      color: #236B45;
+      transition: background-color 0.15s ease;
+    }
+
+    /* Page title */
+    h1 {
+      font-size: 48px;
+      margin-bottom: 12px;
+      color: #236B45;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 45px;
+      color: #236B45;
+    }
+
+    /* Gallery layout */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    /* Project card */
+    .card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+      text-decoration: none;
+      color: #236B45;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Project image */
+    .card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Card text */
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 22px;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      color: #236B45;
+      margin: 0 0 12px;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 0 20px;
+      color: #656464;
+    }
+
+    .view {
+      font-size: 14px;
+      font-weight: 600;
+      color: #5c897a;
+      margin-top: auto;
+    }
+
+    /* Reflection section */
+    .reflection {
+      margin-top: 50px;
+      padding: 30px;
+
+      background: rgba(255, 255, 255, 0.267);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+
+      color: #656464;
+      line-height: 1.8;
+    }
+
+    .reflection h2 {
+      font-size: 26px;
+      color: #236B45;
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    .reflection p {
+      font-size: 16px;
+      color: #656464;
+      margin-bottom: 15px;
+    }
+
+    .reflection p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Back link */
+    .back {
+      display: inline-block;
+      margin-top: 50px;
+
+      text-decoration: none;
+      color: #fefefe;
+
+      font-weight: 700;
+      font-size: 30px;
+
+      -webkit-text-stroke: 1px #f5fcff;
+    }
+
+    .back:hover {
+      color: #236B45;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .reflection {
+        padding: 22px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-    <h1>Week 4</h1>
+  <!-- Page title -->
+  <h1>Week 04</h1>
+  <p class="subtitle">Iteration Generation II — SVG & Pen Plotter</p>
 
-    <a href="week4.1/">Week 4.1</a>
 
-    <br><br>
+  <!-- Project gallery -->
+  <div class="gallery">
 
-    <a href="week4.2/">Week 4.2</a>
+    <!-- Week 4.1 -->
+    <a class="card" href="week4.1/">
+
+      <img src="assets/week4.1.png" alt="Week 4.1">
+
+      <div class="card-content">
+        <h2>Week 4.1</h2>
+
+        <p>
+          Exploring repeated patterns and visual variations
+          using loops and random values.
+        </p>
+
+        <span class="view">View Project →</span>
+      </div>
+
+    </a>
+
+
+    <!-- Week 4.2 -->
+    <a class="card" href="week4.2/">
+
+      <img src="assets/week4.2.png" alt="Week 4.2">
+
+      <div class="card-content">
+        <h2>Week 4.2</h2>
+
+        <p>
+          Experimenting with SVG and pen plotting, also use map to let canvas move.
+        </p>
+
+        <span class="view">View Project →</span>
+      </div>
+
+    </a>
+
+  </div>
+
+
+  <!-- Reflection section -->
+  <div class="reflection">
+
+    <h2>Reflection</h2>
+
+    <p>
+      week4.1
+</p><p>
+I kept the concentric square structure from my previous class. In this version, pressing the R key generates a new random seed, and noise() changes the rotation angle of each square to create different patterns. I also added random colors and used an if...else statement to switch the colors randomly between red and black.
+While drawing the squares, I also wanted to experiment with map(). I used the X and Y positions of the mouse to control a small movement of the whole pattern. As the mouse moves, the squares shift slightly in different directions, creating an effect similar to a 3D phone wallpaper or parallax effect.
+
+    </p>
+
+    <p>
+      week4.2
+</p> <p>
+      In this version, I thought about the repetition of a single pattern that we learned in class. By changing the rotation angle of each unit, the overall pattern can create different visual effects. So I wanted to experiment with this approach. I drew two semicircles facing opposite directions in each unit and used noise() to change the rotation angle of each one. Although the basic shape stays the same, different rotations create different variations in the overall pattern.
+    </p>
+
+  </div>
+
+
+  <!-- Back to homepage -->
+  <a class="back" href="../">← Back</a>
 
 </body>
-
 </html>

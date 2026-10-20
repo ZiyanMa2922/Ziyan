@@ -27,8 +27,8 @@
     }
 
     p {
-      color: #282828;
-      line-height: 2;
+      color: #656464;
+      line-height: 1;
     }
 
     h2 {
@@ -45,7 +45,9 @@
 
 
     .project {
-      display: block;
+      display: flex;
+flex-direction: column;
+min-height: 150px;
       background-color: rgba(255, 255, 255, 0.65);
       padding: 60px;
       border-radius: 20px;
@@ -67,12 +69,24 @@
     .project h3 {
       font-size: 25px;
       font-weight: 700;
+      color: #ad1414;
       margin: 0 0 30px;
     }
+     .project h4 {
+      font-size: 17px;
+      font-weight: 600;
+      color: #5c897a;
+      margin: 0 0 25px;
+    }
+
 
     .project p {
-      margin: 0;
+      margin-top: auto;
+      margin-bottom: 0;
+      font-size: 14px;
     }
+
+  
 
     @media (max-width: 700px) {
       body {
@@ -102,31 +116,37 @@
 
     <a class="project" href="week1/">
       <h3>Week 01</h3>
+  
       <p>View Project →</p>
     </a>
 
     <a class="project" href="week2/">
       <h3>Week 02</h3>
+       <h4>Drawing</h4>
       <p>View Project →</p>
     </a>
 
     <a class="project" href="week3/">
       <h3>Week 03</h3>
+       <h4>Iteration Generation</h4>
       <p>View Project →</p>
     </a>
 
     <a class="project" href="week4/">
       <h3>Week 04</h3>
+      <h4>Iteration Generation II SVG & Pen Plotter</h4>
       <p>View Project →</p>
     </a>
 
     <a class="project" href="week5/">
       <h3>Week 05</h3>
+      <h4>Plotter & Clock</h4>
       <p>View Project →</p>
     </a>
 
     <a class="project" href="week6/">
       <h3>Week 06</h3>
+      <h4>Array & Object</h4>
       <p>View Project →</p>
     </a>
 
