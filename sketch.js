@@ -4,7 +4,6 @@ let cards;
 function setup() {
   noCanvas();
 
-  // 找到全部六张卡片
   cards = selectAll(".project");
 
   console.log("Found cards:", cards.length);
@@ -13,7 +12,7 @@ function setup() {
 
     let card = cards[i];
 
-    // 鼠标进入卡片
+    // mouse into card
     card.mouseOver(function() {
       card.style(
         "transform",
@@ -31,7 +30,7 @@ function setup() {
       );
     });
 
-    // 鼠标离开卡片
+    // mouse leave card
     card.mouseOut(function() {
       card.style(
         "transform",
@@ -50,7 +49,7 @@ function setup() {
     });
   }
 
-  // 鼠标控制背景颜色
+  // mouse position control color
   document.addEventListener("mousemove", function(event) {
 
     let x = constrain(event.clientX, 0, window.innerWidth);
