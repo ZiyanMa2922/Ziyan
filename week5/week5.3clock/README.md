@@ -1,6 +1,15 @@
-# week5.2
-In this version, I tried to further develop the pattern from the previous class. I added more arcs to each original arc by changing their width and height to make the pattern more visually complex. I also added a `sin()` value to transform the overall pattern, creating a wave-like effect across the whole composition.
-However, because I did not set boundaries for the drawing, some parts extended outside the canvas on the webpage. I scaled down the whole pattern in Inkscape and finally drew it successfully with the plotter.
+# week5.3
+My idea is to represent time through falling water drops and the changing water level.
+
+Every second, a white water drop falls from the top of the screen. At the same time, the background gradually becomes lighter, so the white drop slowly blends into the background.
+
+After 60 seconds, the water level rises a little, representing one minute. Then a new minute begins, and the background changes to another random color. It gradually becomes lighter again.
+
+This process keeps repeating, and the water level rises every minute. After one hour, the water fills the entire canvas.
+
+At the end of the hour, the water level gradually goes down until the canvas is empty, and the clock starts a new cycle.
+
+As the water drop falls, I gradually increase the change in its y-position each frame to simulate gravity. This makes the drop fall faster and faster, creating a more natural movement.
 
 ## Getting Started
 

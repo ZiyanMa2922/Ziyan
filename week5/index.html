@@ -1,30 +1,312 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Week 5</title>
+  <title>Week 5 | Ziyan Ma</title>
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.11/p5.min.js"></script>
+  <script src="sketch.js" defer></script>
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 60px 8%;
+      min-height: 100vh;
+      box-sizing: border-box;
+
+      font-family: Arial, sans-serif;
+      background-color: hsl(180, 25%, 78%);
+      color: #603A8C;
+
+      transition: background-color 0.15s ease;
+    }
+
+    /* Page title */
+    h1 {
+      font-size: 48px;
+      margin-bottom: 12px;
+      color: #603A8C;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 45px;
+      color: #603A8C;
+    }
+
+    /* Gallery layout */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    /* Project card */
+    .card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(12px);
+
+      text-decoration: none;
+      color: #603A8C;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+    }
+
+    /* Hover effect */
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    /* Project image */
+    .card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Card text */
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 22px;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      color: #603A8C;
+      margin: 0 0 12px;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 0 20px;
+      color: #656464;
+    }
+
+    .view {
+      font-size: 14px;
+      font-weight: 600;
+      color: #5c897a;
+      margin-top: auto;
+    }
+
+    /* Reflection section */
+    .reflection {
+      margin-top: 50px;
+      padding: 30px;
+
+      background: rgba(255, 255, 255, 0.267);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+
+      color: #656464;
+      line-height: 1.8;
+    }
+
+    .reflection h2 {
+      font-size: 26px;
+      color: #603A8C;
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    .reflection p {
+      font-size: 16px;
+      color: #656464;
+      margin-bottom: 15px;
+    }
+
+    .reflection p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Back link */
+    .back {
+      display: inline-block;
+      margin-top: 50px;
+
+      text-decoration: none;
+      color: #fefefe;
+
+      font-weight: 700;
+      font-size: 30px;
+
+      -webkit-text-stroke: 1px #f5fcff;
+    }
+
+    .back:hover {
+      color: #603A8C;
+      text-decoration: underline;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 30px 6%;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .reflection {
+        padding: 22px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-    <h1>Week 5</h1>
+  <!-- Page title -->
+  <h1>Week 05</h1>
+  <p class="subtitle">Plotter & Clock — Creative Coding Assignments</p>
 
-    <a href="week5.1/">Week 5.1</a>
 
-    <br><br>
+  <!-- Project gallery -->
+  <div class="gallery">
 
-    <a href="week5.2/">Week 5.2</a>
-    
-    <br><br>
+    <!-- Week 5.1 -->
+    <a class="card" href="week5.1/">
 
-    <a href="week5.3clock/">Week 5.3clock</a>
+      <img src="assets/week 5.1.png" alt="Week 5.1">
 
-    <br><br>
+      <div class="card-content">
+        <h2>Week 5.1</h2>
 
-    <a href="week5.3clock2/">Week 5.3clock2</a>
+        <p>
+         pen plotter, press R to change the shape and color
+        </p>
+
+        <span class="view">View Project →</span>
+      </div>
+
+    </a>
+
+
+    <!-- Week 5.2 -->
+    <a class="card" href="week5.2/">
+
+      <img src="assets/week 5.2.png" alt="Week 5.2">
+
+      <div class="card-content">
+        <h2>Week 5.2</h2>
+
+        <p>
+         pen plotter,press R to change the shape
+        </p>
+
+        <span class="view">View Project →</span>
+      </div>
+
+    </a>
+
+
+    <!-- Week 5.3 Clock -->
+    <a class="card" href="week5.3clock/">
+
+      <img src="assets/week 5.3clock.png" alt="Week 5.3 Clock">
+
+      <div class="card-content">
+        <h2>Week 5.3 — Clock</h2>
+
+        <p>
+          second & minutes & hours
+        </p>
+
+        <span class="view">View Project →</span>
+      </div>
+
+    </a>
+
+
+    <!-- Week 5.3 Clock 2 -->
+    <a class="card" href="week5.3clock2/">
+
+      <img src="assets/week 5.3clock2.png" alt="Week 5.3 Clock 2">
+
+      <div class="card-content">
+        <h2>Week 5.3 — Clock 2</h2>
+
+        <p>
+         second & minutes & hours
+        </p>
+
+        <span class="view">View Project →</span>
+      </div>
+
+    </a>
+
+  </div>
+  <!-- End of project gallery -->
+
+
+  <!-- Reflection section -->
+  <div class="reflection">
+
+    <h2>Process & Exploration</h2>
+
+    <p>
+      1. week5.1</p><p>
+I modified the repeated arcs from the previous class, making each unit rotate around its center point. At first, I used 360 degrees for the rotation, but I forgot that the shape is symmetrical, so the plotter ended up drawing the same paths twice. Later, based on the repeated arc pattern, I added random vertical parallel lines to make the overall pattern more visually interesting.
+    </p>
+
+    <p>
+2. week5.2 </p> <p>
+In this version, I tried to further develop the pattern from the previous class. I added more arcs to each original arc by changing their width and height to make the pattern more visually complex. I also added a `sin()` value to transform the overall pattern, creating a wave-like effect across the whole composition.
+However, because I did not set boundaries for the drawing, some parts extended outside the canvas on the webpage. I scaled down the whole pattern in Inkscape and finally drew it successfully with the plotter.
+    </p>
+<p>3. week5.3 clock</p> <p>
+    My idea is to represent time through falling water drops and the changing water level.
+Every second, a white water drop falls from the top of the screen. At the same time, the background gradually becomes lighter, so the white drop slowly blends into the background.
+After 60 seconds, the water level rises a little, representing one minute. Then a new minute begins, and the background changes to another random color. It gradually becomes lighter again.
+This process keeps repeating, and the water level rises every minute. After one hour, the water fills the entire canvas.
+At the end of the hour, the water level gradually goes down until the canvas is empty, and the clock starts a new cycle.
+As the water drop falls, I gradually increase the change in its y-position each frame to simulate gravity. This makes the drop fall faster and faster, creating a more natural movement.
+ </p>
+<p>3. week5.3 clock2</p><p>
+ I felt that the previous version of my clock looked a bit too simple, so I wanted to add a gradient effect. I used the map() function to change the lightness in HSL colors, creating a gradient by layering short horizontal lines with different lightness values. I also used the sin() function to calculate the wave height, giving the gradient a wavy shape.
+</p> 
+</div>
+
+
+  <!-- Back to homepage -->
+  <a class="back" href="../">← Back</a>
+
 </body>
-
 </html>

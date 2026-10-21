@@ -1,14 +1,255 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>week6</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/p5.js"></script>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Week 6 | Ziyan Ma</title>
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.11/p5.min.js"></script>
+  <script src="sketch.js" defer></script>
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 60px 8%;
+      min-height: 100vh;
+      box-sizing: border-box;
+
+      font-family: Arial, sans-serif;
+      background-color: hsl(180, 25%, 78%);
+      color: #5C3828;
+
+      transition: background-color 0.15s ease;
+    }
+
+    /* Page title */
+    h1 {
+      font-size: 48px;
+      margin-bottom: 12px;
+      color: #5C3828;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 45px;
+      color: #5C3828;
+    }
+
+    /* Gallery layout */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    /* Project card */
+    .card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      text-decoration: none;
+      color: #5C3828;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+    }
+
+    /* Hover effect */
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    /* Project image */
+    .card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Card text */
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 22px;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      color: #5C3828;
+      margin: 0 0 12px;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 0 20px;
+      color: #656464;
+    }
+
+    .view {
+      font-size: 14px;
+      font-weight: 600;
+      color: #5c897a;
+      margin-top: auto;
+    }
+
+    /* Reflection section */
+    .reflection {
+      margin-top: 50px;
+      padding: 30px;
+
+      background: rgba(255, 255, 255, 0.267);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+
+      color: #656464;
+      line-height: 1.8;
+    }
+
+    .reflection h2 {
+      font-size: 26px;
+      color: #5C3828;
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    .reflection p {
+      font-size: 16px;
+      color: #656464;
+      margin-bottom: 15px;
+    }
+
+    .reflection p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Back link */
+    .back {
+      display: inline-block;
+      margin-top: 50px;
+
+      text-decoration: none;
+      color: #fefefe;
+
+      font-weight: 700;
+      font-size: 30px;
+
+      -webkit-text-stroke: 1px #f5fcff;
+    }
+
+    .back:hover {
+      color: #5C3828;
+      text-decoration: underline;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 30px 6%;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .reflection {
+        padding: 22px;
+      }
+    }
+
+  </style>
 </head>
+
 <body>
-    <script src="sketch.js"></script>
+
+  <!-- Page title -->
+  <h1>Week 06</h1>
+
+  <p class="subtitle">
+    Array & Object — Creative Coding Assignments
+  </p>
+
+
+  <!-- Project gallery -->
+  <div class="gallery">
+
+    <!-- Week 6.1 -->
+    <a class="card" href="week6.1/">
+
+      <img src="assets/week6.1.png" alt="Week 6.1">
+
+      <div class="card-content">
+
+        <h2>Week 6.1</h2>
+
+        <p>
+          Exploring arrays and objects in p5.js.
+        </p>
+
+        <span class="view">View Project →</span>
+
+      </div>
+
+    </a>
+
+  </div>
+  <!-- End of project gallery -->
+
+
+  <!-- Reflection section -->
+  <div class="reflection">
+
+    <h2>Process & Exploration</h2>
+
+    <p>
+      1. Week 6
+    </p>
+
+    <p>
+    
+In this week's assignment, I used an array to create a collection of stars with different sizes and transparency levels. Each time I click the mouse, pop() removes one star from the array. As the number of stars gradually decreases, I wanted to create the feeling that the sky is slowly getting brighter.
+
+When the last star disappears, the background changes from black to sky blue, just like the sky at dawn. I also used many small, transparent circles to form the shapes of clouds, allowing them to slowly float across the daytime sky.
+    </p>
+
+  </div>
+
+
+  <!-- Back to homepage -->
+  <a class="back" href="../">← Back</a>
+
 </body>
+
 </html>
