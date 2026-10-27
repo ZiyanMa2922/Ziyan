@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+  <title>Week 7 | Ziyan Ma</title>
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.11/p5.min.js"></script>
+  <script src="sketch.js" defer></script>
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 60px 8%;
+      min-height: 100vh;
+      box-sizing: border-box;
+
+      font-family: Arial, sans-serif;
+      background-color: hsl(180, 25%, 78%);
+      color: #A34D72;
+
+      transition: background-color 0.15s ease;
+    }
+
+    /* Page title */
+    h1 {
+      font-size: 48px;
+      margin-bottom: 12px;
+      color: #A34D72;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 45px;
+      color: #A34D72;
+    }
+
+    /* Gallery layout */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    /* Project card */
+    .card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      text-decoration: none;
+      color: #A34D72;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+    }
+
+    /* Hover effect */
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    /* Project image */
+    .card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Card text */
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 22px;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      color: #A34D72;
+      margin: 0 0 12px;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 0 20px;
+      color: #656464;
+    }
+
+    .view {
+      font-size: 14px;
+      font-weight: 600;
+      color: #A34D72;
+      margin-top: auto;
+    }
+
+    /* Reflection section */
+    .reflection {
+      margin-top: 50px;
+      padding: 30px;
+
+      background: rgba(255, 255, 255, 0.267);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+
+      color: #656464;
+      line-height: 1.8;
+    }
+
+    .reflection h2 {
+      font-size: 26px;
+      color: #A34D72;
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    .reflection p {
+      font-size: 16px;
+      color: #656464;
+      margin-bottom: 15px;
+    }
+
+    .reflection p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Back link */
+    .back {
+      display: inline-block;
+      margin-top: 50px;
+
+      text-decoration: none;
+      color: #fefefe;
+
+      font-weight: 700;
+      font-size: 30px;
+
+      -webkit-text-stroke: 1px #f5fcff;
+    }
+
+    .back:hover {
+      color: #A34D72;
+      text-decoration: underline;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 30px 6%;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .reflection {
+        padding: 22px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Page title -->
+  <h1>Week 07</h1>
+
+  <p class="subtitle">
+    Creative Coding Assignments
+  </p>
+
+  <!-- Project gallery -->
+  <div class="gallery">
+
+    <!-- Week 7.1 -->
+    <a class="card" href="week7.1/">
+
+      <img src="assets/week7.1.png" alt="Week 7.1">
+
+      <div class="card-content">
+
+        <h2>Week 7.1</h2>
+
+        <p>
+          Objects, Projection mapping & class
+        </p>
+
+        <span class="view">View Project →</span>
+
+      </div>
+
+    </a>
+
+  </div>
+  <!-- End of project gallery -->
+
+  <!-- Reflection section -->
+  <div class="reflection">
+
+    <h2>Process & Exploration</h2>
+
+    <p>
+      1. Week 7
+    </p>
+
+    <p>
+      In this projection mapping assignment, I wanted to try to create continuity between different faces of a cube, so I made rows of squares that can move left and right.
+
+When I finished drawing the first Quad and wanted to try adding a second Quad, I originally thought it would be as complicated as when we combined the three Quads from our group in class. But because I had already created a function for the first pattern, when I wanted to create an identical Quad, I only needed to add a new quad2, add “myQuad2.displaySketch(ZiyanDraw);“, and create the new canvas to complete it! I feel that this is really much easier than drawing the small squares one by one like before.
+
+Then, I tried making some changes to the second Quad. At first, I changed the background color and the number of squares, but I felt that the new background color didn't work well with the overall visual effect, so I changed it back to black. After that, I made some of the squares in the second Quad randomly disappear and increased the distance each row of squares could move horizontally, making the two Quads look different.
+Finally, I also tried adding two Quads we created in class, hoping to combine different animation effects in the same projection mapping project.
+    </p>
+        <!-- Week 7 Video -->
+<div class="reflection-media">
+
+  <video controls playsinline>
+    <source src="assets/week7.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Week 7.2 Image -->
+  <img src="assets/week7.2.png" alt="Week 7.2">
+
+  </div>
+
+  <!-- Back to homepage -->
+  <a class="back" href="../">← Back</a>
+
+</body>
+
+</html>

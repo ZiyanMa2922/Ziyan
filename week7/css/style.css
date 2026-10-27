@@ -1,0 +1,34 @@
+
+/* Reflection video and image */
+.reflection-media {
+  margin-top: 35px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 30px;
+}
+
+/* Video */
+.reflection-media video {
+  display: block;
+
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+
+  border-radius: 12px;
+  background-color: #000;
+}
+
+/* Image */
+.reflection-media img {
+  display: block;
+
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+
+  border-radius: 12px;
+}
