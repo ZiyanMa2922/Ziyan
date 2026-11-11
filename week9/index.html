@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Week 9 | Ziyan Ma</title>
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.11/p5.min.js"></script>
+  <script src="sketch.js" defer></script>
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 60px 8%;
+      min-height: 100vh;
+      box-sizing: border-box;
+
+      font-family: Arial, sans-serif;
+      background-color: hsl(180, 25%, 78%);
+      color: #5C3828;
+
+      transition: background-color 0.15s ease;
+    }
+
+    /* Page title */
+    h1 {
+      font-size: 48px;
+      margin-bottom: 12px;
+      color: #5C3828;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 45px;
+      color: #5C3828;
+    }
+
+    /* Gallery layout */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    /* Project card */
+    .card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      text-decoration: none;
+      color: #5C3828;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+    }
+
+    /* Hover effect */
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    /* Project image */
+    .card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Card text */
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 22px;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      color: #5C3828;
+      margin: 0 0 12px;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 0 20px;
+      color: #656464;
+    }
+
+    .view {
+      font-size: 14px;
+      font-weight: 600;
+      color: #5c897a;
+      margin-top: auto;
+    }
+
+    /* Reflection section */
+    .reflection {
+      margin-top: 50px;
+      padding: 30px;
+
+      background: rgba(255, 255, 255, 0.267);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+
+      color: #656464;
+      line-height: 1.8;
+    }
+
+    .reflection h2 {
+      font-size: 26px;
+      color: #5C3828;
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    .reflection p {
+      font-size: 16px;
+      color: #656464;
+      margin-bottom: 15px;
+    }
+
+    .reflection p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Back link */
+    .back {
+      display: inline-block;
+      margin-top: 50px;
+
+      text-decoration: none;
+      color: #fefefe;
+
+      font-weight: 700;
+      font-size: 30px;
+
+      -webkit-text-stroke: 1px #f5fcff;
+    }
+
+    .back:hover {
+      color: #5C3828;
+      text-decoration: underline;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 30px 6%;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .reflection {
+        padding: 22px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Page title -->
+  <h1>Week 09</h1>
+
+  <p class="subtitle">
+    HandPose — Creative Coding Assignments
+  </p>
+
+  <!-- Project gallery -->
+  <div class="gallery">
+
+    <!-- Week 9.1 -->
+    <a class="card" href="week9.1/">
+
+      <img src="assets/week9.1.jpg" alt="Week 9.1">
+
+      <div class="card-content">
+
+        <h2>Week 9.1</h2>
+
+        <p>
+         Hand gesture interactions
+        </p>
+
+        <span class="view">View Project →</span>
+
+      </div>
+
+    </a>
+
+  </div>
+  <!-- End of project gallery -->
+
+  <!-- Reflection section -->
+  <div class="reflection">
+
+    <h2>Process & Exploration</h2>
+
+    <p>
+      1. Week 9
+    </p>
+
+    <p>
+      I started by looking at the examples in this week's LLM.
+      One of the examples redrew and connected several points
+      on the body, which made me wonder if connecting all the
+      points on the left and right hands in a hand gesture
+      interaction could create a magic-like effect.
+    </p>
+
+    <p>
+      I took 21 points from each hand and connected every point
+      on one hand to every point on the other hand, creating
+      dense lines. I wanted this effect to start when two fingers
+      touched, so I added a condition to trigger the drawing
+      of the lines. When the distance between the index fingertips
+      of the two hands is less than 55, the lines start to appear.
+      As the distance between the two hands increases, I use
+      map() to map the distance to the opacity of a black overlay,
+      making the image gradually darker. When both hands can
+      no longer be detected at the same time, the image resets.
+    </p>
+
+    <p>
+      I felt that the visual effect was a little boring, so I
+      added another distance condition. When the distance between
+      the two hands is greater than 300, a filter is applied
+      to the image. I used the built-in black-and-white filter
+      (THRESHOLD) in p5.js. I also tried changing the order
+      of the code because I wanted the image to be unaffected
+      by the black overlay controlled by map() when the filter
+      was applied. However, I found that the strong black-and-white
+      contrast made the lines between the hands less visible,
+      so I changed it back.
+    </p>
+
+    <p>
+      During the process, I noticed that the camera image was
+      reversed compared to my actual movements, which made
+      it very difficult for me to adjust my movements each time.
+      So I added transform: scaleX(-1); in CSS to mirror the
+      entire image horizontally.
+    </p>
+
+  </div>
+
+  <!-- Back to homepage -->
+  <a class="back" href="../">← Back</a>
+
+</body>
+
+</html>
