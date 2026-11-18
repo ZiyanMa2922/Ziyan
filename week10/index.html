@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Week 10 | Ziyan Ma</title>
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.11/p5.min.js"></script>
+  <script src="sketch.js" defer></script>
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 60px 8%;
+      min-height: 100vh;
+      box-sizing: border-box;
+
+      font-family: Arial, sans-serif;
+      background-color: hsl(180, 25%, 78%);
+      color: #603A8C;
+
+      transition: background-color 0.15s ease;
+    }
+
+    /* Page title */
+    h1 {
+      font-size: 48px;
+      margin-bottom: 12px;
+      color: #603A8C;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 45px;
+      color: #603A8C;
+    }
+
+    /* Gallery layout */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    /* Project card */
+    .card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      text-decoration: none;
+      color: #603A8C;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+    }
+
+    /* Hover effect */
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    /* Project image */
+    .card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Card text */
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 22px;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      color: #603A8C;
+      margin: 0 0 12px;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 0 20px;
+      color: #656464;
+    }
+
+    .view {
+      font-size: 14px;
+      font-weight: 600;
+      color: #5c897a;
+      margin-top: auto;
+    }
+
+    /* Reflection section */
+    .reflection {
+      margin-top: 50px;
+      padding: 30px;
+
+      background: rgba(255, 255, 255, 0.267);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+
+      color: #656464;
+      line-height: 1.8;
+    }
+
+    .reflection h2 {
+      font-size: 26px;
+      color: #603A8C;
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    .reflection p {
+      font-size: 16px;
+      color: #656464;
+      margin-bottom: 15px;
+    }
+
+    .reflection p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Back link */
+    .back {
+      display: inline-block;
+      margin-top: 50px;
+
+      text-decoration: none;
+      color: #fefefe;
+
+      font-weight: 700;
+      font-size: 30px;
+
+      -webkit-text-stroke: 1px #f5fcff;
+    }
+
+    .back:hover {
+      color: #603A8C;
+      text-decoration: underline;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 30px 6%;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .reflection {
+        padding: 22px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Page title -->
+  <h1>Week 10</h1>
+
+  <p class="subtitle">
+    Sound Visualization — Creative Coding Assignments
+  </p>
+
+  <!-- Project gallery -->
+  <div class="gallery">
+
+    <!-- Week 10.1 -->
+    <a class="card" href="week10.1/">
+
+      <img src="assets/week10.png" alt="Week 10.1">
+
+      <div class="card-content">
+
+        <h2>Week 10.1</h2>
+
+        <p>
+          Instrument making
+        </p>
+
+        <span class="view">View Project →</span>
+
+      </div>
+
+    </a>
+
+  </div>
+  <!-- End of project gallery -->
+
+  <!-- Reflection section -->
+  <div class="reflection">
+
+    <h2>Process & Exploration</h2>
+
+    <p>
+      Week 10.1
+    </p>
+
+    <p>
+     This week, I wanted to create a playable instrument. I hoped that people could play beautiful music with this instrument even without any knowledge of music theory or musical experience. This made me think of chords, as each chord can produce a harmonious sound when played individually. Later, I tried using notes from the pentatonic scale so that users could more easily create harmonious melodies while playing freely.
+
+I found that I could use `synth = new Tone.Synth()` in Tone.js to create a synthesizer and generate sounds at different pitches. I arranged the notes from low to high as vertical lines across the screen from left to right. When the camera detects that the thumb and index finger of the right hand are pinching together, users can play different notes by moving their fingers left and right.
+
+Then, I felt that having only one melodic sound was a little monotonous. A band usually also includes percussion instruments to keep the beat, giving the music a stronger sense of rhythm. So I imported four percussion sounds: Shaker, Kick Drum, Hi-hat, and Snare. I placed the corresponding audio files in the assets folder and used `Tone.Player()` to play these sounds. I divided the screen into four regions from top to bottom, each corresponding to a different percussion sound. When the left hand makes a fist, it triggers the percussion sound corresponding to the region where the hand is located. In this way, both hands can play the melody and rhythm simultaneously. Later, I also added background piano music that can be played and paused by pressing the spacebar, making the music more layered.
+    </p>
+
+    <!-- Project video -->
+    <video
+      controls
+      playsinline
+      style="
+        display: block;
+        width: 65%;
+        max-width: 500px;
+        height: auto;
+        margin: 20px auto;
+        border-radius: 12px;
+      "
+    >
+      <source src="assets/week10video.mp4" type="video/mp4">
+    </video>
+
+  </div>
+  <!-- End of reflection section -->
+
+  <!-- Back to homepage -->
+  <a class="back" href="../">← Back</a>
+
+</body>
+
+</html>
