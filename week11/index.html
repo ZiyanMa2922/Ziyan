@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Week 11 | Ziyan Ma</title>
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.11/p5.min.js"></script>
+  <script src="sketch.js" defer></script>
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 60px 8%;
+      min-height: 100vh;
+      box-sizing: border-box;
+
+      font-family: Arial, sans-serif;
+      background-color: hsl(180, 25%, 78%);
+      color: #603A8C;
+
+      transition: background-color 0.15s ease;
+    }
+
+    /* Page title */
+    h1 {
+      font-size: 48px;
+      margin-bottom: 12px;
+      color: #603A8C;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 45px;
+      color: #603A8C;
+    }
+
+    /* Gallery layout */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    /* Project card */
+    .card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      text-decoration: none;
+      color: #603A8C;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+    }
+
+    /* Hover effect */
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    /* Project image */
+    .card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Card text */
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 22px;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      color: #603A8C;
+      margin: 0 0 12px;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 0 20px;
+      color: #656464;
+    }
+
+    .view {
+      font-size: 14px;
+      font-weight: 600;
+      color: #5c897a;
+      margin-top: auto;
+    }
+
+    /* Reflection section */
+    .reflection {
+      margin-top: 50px;
+      padding: 30px;
+
+      background: rgba(255, 255, 255, 0.267);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+
+      color: #656464;
+      line-height: 1.8;
+    }
+
+    .reflection h2 {
+      font-size: 26px;
+      color: #603A8C;
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    .reflection p {
+      font-size: 16px;
+      color: #656464;
+      margin-bottom: 15px;
+    }
+
+    .reflection p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Back link */
+    .back {
+      display: inline-block;
+      margin-top: 50px;
+
+      text-decoration: none;
+      color: #fefefe;
+
+      font-weight: 700;
+      font-size: 30px;
+
+      -webkit-text-stroke: 1px #f5fcff;
+    }
+
+    .back:hover {
+      color: #603A8C;
+      text-decoration: underline;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 30px 6%;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .reflection {
+        padding: 22px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Page title -->
+  <h1>Week 11</h1>
+
+  <p class="subtitle">
+    Data Visualization — Creative Coding Assignments
+  </p>
+
+  <!-- Project gallery -->
+  <div class="gallery">
+
+    <!-- Week 11.1 -->
+    <a class="card" href="week11.1/">
+
+      <img src="assets/week11.png" alt="Week 11.1">
+
+      <div class="card-content">
+
+        <h2>Week 11.1</h2>
+
+        <p>
+         Weather Data Visualization
+        </p>
+
+
+      </div>
+
+    </a>
+
+  </div>
+  <!-- End of project gallery -->
+
+  <!-- Reflection section -->
+  <div class="reflection">
+
+    <h2>Process & Exploration</h2>
+
+    <p>
+      Week 11.1
+    </p>
+
+    <p>
+     In this assignment, I wanted to try visualizing weather data so that people could experience wind speed and direction more intuitively. When I haven't gone outside, I find it difficult to understand how strong the wind actually is through the numbers on my phone's weather app. So I wanted to use dynamic visual effects to transform wind data into something that people can see and perceive.
+I used the Open-Meteo API to retrieve three types of local weather data in Brooklyn: temperature, wind speed, and wind direction. I converted wind speed and wind direction into the movement speed and direction of particles, respectively, and used an array to store the information of each particle, allowing these small particles to move continuously and simulate the effect of being blown by the wind. As the particles move, I gradually reduce their opacity until they completely disappear. Since the definition of wind direction in meteorological data is different from the angle definition on the canvas, I needed to add 90° to the wind direction value to convert it into the corresponding direction on the canvas. I drew a gradient temperature bar on the left side of the canvas, transitioning from blue through white to orange, and used the color corresponding to the current temperature as the background color of the entire canvas. I also set the particle colors to the inverse of the background color to make their movement more visible, while using noise() to create subtle variations in their colors.
+Later, I added mouse interaction. When the mouse moves across the canvas, particles that enter a certain range around the mouse change their movement direction and scatter around it, forming an invisible protective area. Through the relationship between the mouse and the particles, I wanted people to experience the direction and strength of the wind more intuitively, as if they were in that weather environment themselves.
+ </p>
+
+
+
+  </div>
+  <!-- End of reflection section -->
+
+  <!-- Back to homepage -->
+  <a class="back" href="../">← Back</a>
+
+</body>
+
+</html>
