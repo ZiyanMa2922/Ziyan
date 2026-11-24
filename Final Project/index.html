@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Final Project | Ziyan Ma</title>
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.11/p5.min.js"></script>
+  <script src="sketch.js" defer></script>
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 60px 8%;
+      min-height: 100vh;
+      box-sizing: border-box;
+
+      font-family: Arial, sans-serif;
+      background-color: hsl(180, 25%, 78%);
+      color: #603A8C;
+
+      transition: background-color 0.15s ease;
+    }
+
+    /* Page title */
+    h1 {
+      font-size: 48px;
+      margin-bottom: 12px;
+      color: #603A8C;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 45px;
+      color: #656464;
+    }
+
+    /* Project gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    /* Project card */
+    .card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(12px);
+
+      text-decoration: none;
+      color: inherit;
+
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    .card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 22px;
+    }
+
+    .card-content h2 {
+      font-size: 24px;
+      margin: 0 0 10px;
+      color: #603A8C;
+    }
+
+    .card-content p {
+      font-size: 16px;
+      color: #656464;
+      line-height: 1.6;
+    }
+
+    .view {
+      margin-top: auto;
+      color: #5c897a;
+      font-weight: bold;
+    }
+
+    /* Proposal and reflection */
+    .reflection {
+      margin-top: 50px;
+      padding: 30px;
+
+      background: rgba(255, 255, 255, 0.267);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+
+      line-height: 1.8;
+    }
+
+    .reflection h2 {
+      font-size: 26px;
+      color: #603A8C;
+      margin-top: 0;
+    }
+
+    .reflection h3 {
+      font-size: 20px;
+      color: #603A8C;
+      margin-top: 30px;
+    }
+
+    .reflection p {
+      color: #656464;
+    }
+
+    .reflection img {
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      height: auto;
+      margin: 20px auto;
+      border-radius: 12px;
+    }
+
+    .reflection a {
+      color: #5c897a;
+    }
+
+    /* Back button */
+    .back {
+      display: inline-block;
+      margin-top: 50px;
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .back:hover {
+      opacity: 0.7;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 30px 6%;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Final Project</h1>
+
+  <p class="subtitle">
+    Creative Coding — Final Project
+  </p>
+
+  <!-- Final Proposal -->
+  <section class="reflection">
+
+    <h2>Final Proposal</h2>
+  <h3>Previous Assignment</h3>
+    <p>
+   
+I want to continue exploring my Week 11 Weather Data Visualization assignment as my Final Project because this project is more closely related to my daily life. When I check the weather forecast, although I can access a lot of accurate weather data, it is difficult to intuitively understand what the weather outside actually feels like through these numbers. In my Week 11 assignment, I tried to transform wind speed, wind direction, and temperature into dynamic visual effects and simulate the feeling of being in the wind through the interaction between the mouse and particles.
+  </p>
+  <h3>Proposed Development</h3>
+ <p>I hope to retain the original concept of transforming weather data into perceptible visual effects and further enhance the interaction between people and the webpage. I do not want this webpage to simply be an information display platform like a weather forecast, but rather a webpage that allows people to connect and interact with it.
+While looking for references, I came across different visual representations of weather data in Refik Anadol's Wind of Boston. I want to build on my original particle effects by adding richer visual elements and using different visuals to express the different sensations that weather itself can bring to people. If possible, I hope these visuals can be dynamically generated based on real weather data. I also want to explore switching between different visual representations through interactions with the webpage.
+In terms of interaction, I want to extend the previous mouse interaction to hand or body motion tracking, allowing people to interact with the weather elements on the screen through their own bodies, as if they were actually standing in the wind.
+In addition, I want to explore more factors that influence how people perceive weather, especially apparent temperature. Sometimes, even when the actual temperature is the same, changes in sunlight, wind speed, and humidity can make people feel differently. I want to try obtaining these weather data and explore how to express the difference between actual temperature and apparent temperature through visual effects and body interaction. In this way, I can use this webpage to get a general sense of what the weather outside feels like.
+</p>
+<h3>Implementation & Challenges</h3>
+    <p>I plan to continue using the Open-Meteo API to obtain weather data. In addition to the original temperature, wind speed, and wind direction data, I want to include apparent temperature, solar radiation, and humidity, and explore suitable ways to represent them visually.
+I need to further explore particle movement, different generative visual effects, and how to switch between different visual representations. I also want to build on the camera image processing and hand tracking techniques I learned previously, learn more about human body segmentation, and explore whether particles can interact with body outlines and movements.
+I also want to make the interaction between particles and the human body look more natural. I want to transform different weather data into visual effects that convey meaningful sensory experiences, rather t
+    </p>
+
+
+  </section>
+
+  <!-- Final Project-->
+  <h2 style="margin-top: 50px;">Final Project </h2>
+
+  <div class="gallery">
+
+    <div class="card">
+
+      <div class="card-content">
+
+        <h2>Final Project</h2>
+
+        <p>Work in Progress</p>
+
+        <span class="view">Coming Soon</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Process and Reflection -->
+  <section class="reflection">
+
+    <h2>Process &amp; Reflection</h2>
+
+    <p>
+      <!-- Document my development process here. -->
+    </p>
+
+  </section>
+
+  <a class="back" href="../">← Back to Home</a>
+
+</body>
+
+</html>
